@@ -48,7 +48,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Interfaces" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -65,7 +65,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598817951749</updated>
-      <workItem from="1598817952934" duration="7667000" />
+      <workItem from="1598817952934" duration="8949000" />
     </task>
     <servers />
   </component>
@@ -100,10 +100,10 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="699" y="486" key="NewPhpFileDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1598864882684" />
-    <state x="397" y="199" key="SettingsEditor" timestamp="1598822858482">
+    <state x="397" y="199" key="SettingsEditor" timestamp="1598903664902">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="397" y="199" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1598822858482" />
+    <state x="397" y="199" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1598903664902" />
     <state x="729" y="-329" key="run.anything.popup" timestamp="1598867820564">
       <screen x="-56" y="-1260" width="2240" height="1260" />
     </state>
