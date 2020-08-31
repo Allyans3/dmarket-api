@@ -1,0 +1,22 @@
+{
+  "name": "allyans3/dmarket-api",
+  "description": "DMarket API",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+      {
+          "name": "Allyans3",
+          "email": "a.sylenok@gmail.com"
+      }
+  ],
+  "require": {
+      "ext-json": "*",
+      "ext-curl": "*",
+      "psy/psysh": "^0.10.4"
+  },
+  "autoload": {
+      "psr-4": {
+          "DMarketApi\\": "src/"
+      }
+  }
+}
