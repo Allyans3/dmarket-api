@@ -52,7 +52,7 @@ class MarketItems extends Request implements RequestInterface
     {
         $this->orderBy = $options['orderBy'] ?? $this->orderBy;
         $this->orderDir = $options['orderDir'] ?? $this->orderDir;
-        $this->title = $options['title'] ?? $this->title;
+        $this->title = isset($options['title']) ? rawurlencode($options['title']) : $this->title;
         $this->priceFrom = $options['priceFrom'] ?? $this->priceFrom;
         $this->priceTo = $options['priceTo'] ?? $this->priceTo;
         $this->treeFilters = $options['treeFilters'] ?? $this->treeFilters;
