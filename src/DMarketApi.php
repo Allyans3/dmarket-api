@@ -9,7 +9,7 @@ class DMarketApi
 {
     const CLASS_PREFIX = '\\DMarketApi\\Requests\\';
 
-    public function gamesList($proxy = [])
+    public function getGamesList($proxy = [])
     {
         $type = 'GamesList';
 
@@ -22,26 +22,28 @@ class DMarketApi
         return (new $class())->call($proxy)->response();
     }
 
-    public function marketItems(string $game = null, array $options = [], $proxy = [])
+    public function getMarketItems(string $game = null, array $options = [], $proxy = [])
     {
         $type = 'MarketItems';
 
         return $this->request($type, Config::GAME[$game], $options)->call($options, $proxy)->response();
     }
 
-    public function salesHistory(string $game = null, array $options = [], $proxy = [])
+    public function getSalesHistory(string $game = null, array $options = [], $proxy = [])
     {
         $type = 'SalesHistory';
 
         return $this->request($type, Config::GAME[$game], $options)->call($options, $proxy)->response();
     }
 
-    public function lastSales(string $game = null, array $options = [], $proxy = [])
+    public function getLastSales(string $game = null, array $options = [], $proxy = [])
     {
         $type = 'LastSales';
 
         return $this->request($type, Config::GAME[$game], $options)->call($options, $proxy)->response();
     }
+
+
 
     private function request($type, $gameId, array $options)
     {
