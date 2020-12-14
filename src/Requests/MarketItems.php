@@ -7,19 +7,19 @@ use DMarketApi\Interfaces\RequestInterface;
 
 class MarketItems extends Request implements RequestInterface
 {
-    const URL = 'https://trading.dmarket.com/exchange/v1/market/items?gameId=%s&title=%s&currency=%s&orderBy=%s&orderDir=%s&priceFrom=%s&priceTo=%s&treeFilters=%s&types=%s&offset=%s&limit=%s&platform=%s&isLoggedIn=%s';
+    const URL = 'https://trading.dmarket.com/exchange/v1/market/items?gameId=%s&title=%s&currency=%s&orderBy=%s&orderDir=%s&priceFrom=%s&priceTo=%s&treeFilters=%s&types=%s&cursor=%s&limit=%s&platform=%s&isLoggedIn=%s';
 
     private string $gameId;
+    private string $title = '';
+    private string $currency = 'USD';
     private string $orderBy = 'best_deals';
     private string $orderDir = 'desc';
-    private string $title = '';
     private int $priceFrom = 0;
     private int $priceTo = 0;
     private string $treeFilters = '';
     private string $types = 'dmarket';
-    private int $offset = 0;
+    private string $cursor = '';
     private int $limit = 100;
-    private string $currency = 'USD';
     private string $platform = 'browser';
     private bool $isLoggedIn = true;
 
@@ -34,8 +34,8 @@ class MarketItems extends Request implements RequestInterface
     public function getUrl()
     {
         return sprintf(self::URL, $this->gameId, $this->title, $this->currency, $this->orderBy, $this->orderDir,
-                        $this->priceFrom, $this->priceTo, $this->treeFilters, $this->types, $this->offset, $this->limit,
-                        $this->platform, $this->isLoggedIn);
+            $this->priceFrom, $this->priceTo, $this->treeFilters, $this->types, $this->cursor, $this->limit,
+            $this->platform, $this->isLoggedIn);
     }
 
     public function call($options = [], $proxy = [])
@@ -57,7 +57,7 @@ class MarketItems extends Request implements RequestInterface
         $this->priceTo = $options['priceTo'] ?? $this->priceTo;
         $this->treeFilters = $options['treeFilters'] ?? $this->treeFilters;
         $this->types = $options['types'] ?? $this->types;
-        $this->offset = $options['offset'] ?? $this->offset;
+        $this->cursor = $options['cursor'] ?? $this->cursor;
         $this->limit = $options['limit'] ?? $this->limit;
         $this->currency = $options['currency'] ?? $this->currency;
         $this->platform = $options['platform'] ?? $this->platform;
