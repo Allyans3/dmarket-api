@@ -27,8 +27,10 @@ Games ID's
 | Game            | Game ID |
 | --------------- | ------- |
 | CS:GO           | csgo    |
+| NAVI            | navi    |
 | DotA2           | dota2   |
 | Team Fortress 2 | tf2     |
+| Rust            | rust    |
 | Life Beyond     | lb      |
 | DMarket         | dmarket |
 | Misc            | misc    |

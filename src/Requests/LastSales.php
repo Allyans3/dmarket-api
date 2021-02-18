@@ -8,12 +8,12 @@ use Psy\Exception\RuntimeException;
 
 class LastSales extends Request implements RequestInterface
 {
-    const URL = 'https://trading.dmarket.com/marketplace-api/v1/last-sales?GameID=%s&Title=%s&Currency=%s';
+    const URL = 'https://api.dmarket.com/marketplace-api/v1/last-sales?Title=%s&GameID=%s&Currency=%s';
 
-    private string $gameId;
-    private string $title = '';
-    private string $currency = 'USD';
-    private string $method = 'GET';
+    private $gameId;
+    private $title = '';
+    private $currency = 'USD';
+    private $method = 'GET';
 
     public function __construct($gameId, $options = [])
     {
@@ -21,9 +21,9 @@ class LastSales extends Request implements RequestInterface
         $this->setOptions($options);
     }
 
-    public function getUrl()
+    public function getUrl(): string
     {
-        return sprintf(self::URL, $this->gameId, $this->title, $this->currency);
+        return sprintf(self::URL, $this->title,$this->gameId, $this->currency);
     }
 
     public function call($options = [], $proxy = [])
@@ -31,12 +31,12 @@ class LastSales extends Request implements RequestInterface
         return $this->setOptions($options)->steamHttpRequest($proxy);
     }
 
-    public function getRequestMethod()
+    public function getRequestMethod(): string
     {
         return $this->method;
     }
 
-    private function setOptions($options)
+    private function setOptions($options): LastSales
     {
         if (isset($options['title'])) {
             $this->title = rawurlencode($options['title']);

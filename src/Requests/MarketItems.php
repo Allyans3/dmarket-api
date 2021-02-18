@@ -7,23 +7,23 @@ use DMarketApi\Interfaces\RequestInterface;
 
 class MarketItems extends Request implements RequestInterface
 {
-    const URL = 'https://trading.dmarket.com/exchange/v1/market/items?gameId=%s&title=%s&currency=%s&orderBy=%s&orderDir=%s&priceFrom=%s&priceTo=%s&treeFilters=%s&types=%s&cursor=%s&limit=%s&platform=%s&isLoggedIn=%s';
+    const URL = 'https://api.dmarket.com/exchange/v1/market/items?gameId=%s&title=%s&currency=%s&orderBy=%s&orderDir=%s&priceFrom=%s&priceTo=%s&treeFilters=%s&types=%s&cursor=%s&limit=%s&platform=%s&isLoggedIn=%s';
 
-    private string $gameId;
-    private string $title = '';
-    private string $currency = 'USD';
-    private string $orderBy = 'best_deals';
-    private string $orderDir = 'desc';
-    private int $priceFrom = 0;
-    private int $priceTo = 0;
-    private string $treeFilters = '';
-    private string $types = 'dmarket';
-    private string $cursor = '';
-    private int $limit = 100;
-    private string $platform = 'browser';
-    private bool $isLoggedIn = true;
+    private $gameId;
+    private $title = '';
+    private $currency = 'USD';
+    private $orderBy = 'best_deals';
+    private $orderDir = 'desc';
+    private $priceFrom = 0;
+    private $priceTo = 0;
+    private $treeFilters = '';
+    private $types = 'dmarket';
+    private $cursor = '';
+    private $limit = 100;
+    private $platform = 'browser';
+    private $isLoggedIn = true;
 
-    private string $method = 'GET';
+    private $method = 'GET';
 
     public function __construct($gameId, $options = [])
     {
@@ -31,7 +31,7 @@ class MarketItems extends Request implements RequestInterface
         $this->setOptions($options);
     }
 
-    public function getUrl()
+    public function getUrl(): string
     {
         return sprintf(self::URL, $this->gameId, $this->title, $this->currency, $this->orderBy, $this->orderDir,
             $this->priceFrom, $this->priceTo, $this->treeFilters, $this->types, $this->cursor, $this->limit,
@@ -43,12 +43,12 @@ class MarketItems extends Request implements RequestInterface
         return $this->setOptions($options)->steamHttpRequest($proxy);
     }
 
-    public function getRequestMethod()
+    public function getRequestMethod(): string
     {
         return $this->method;
     }
 
-    private function setOptions($options)
+    private function setOptions($options): MarketItems
     {
         $this->orderBy = $options['orderBy'] ?? $this->orderBy;
         $this->orderDir = $options['orderDir'] ?? $this->orderDir;
